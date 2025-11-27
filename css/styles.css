@@ -4,7 +4,6 @@ body {
   font-family: 'Segoe UI', sans-serif;
   color: #000000;
   align-items: center;
-  margin-top: 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,6 +15,71 @@ body {
     font-size: xx-large;
     padding-left: 10vw;
     font-weight: bold;
+}
+
+nav {
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+}
+
+nav li {
+    height: 50px;
+}
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+nav a:hover{
+    background-color: rgb(211, 211, 211);
+    border-radius: 5px;
+}
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+.SideBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0%;
+    padding: 0%;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(134, 24, 24, 0.178);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.SideBar li {
+    width: 100%;
+}
+
+.SideBar a {
+    width: 100%;
+}
+
+.burger-menu{
+    display: none;
 }
 
 .CardContainer{
@@ -334,6 +398,12 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hideMainBar{
+        display: none;
+    }
+    .burger-menu{
+    display: block;
+}
     .CardContainer{
     flex-direction: column;
     justify-content: center;
