@@ -9,18 +9,18 @@
 <body>
     <nav>
         <ul class="SideBar">
-            <li class="close-menu-button" onclick=closeSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li class="close-menu-button" onclick=closeSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
             <li><a href="#">Khellim's place</a></li>
             <li><a href="#">Windows Aero</a></li>
             <li><a href="#">Fluent Design System</a></li>
             <li><a href="#">Блог</a></li>
         </ul>
         <ul>
-            <li><a href="#">Khellim's place</a></li>
+            <li class="hideMainBar"><a href="#">Khellim's place</a></li>
             <li class="hideMainBar"><a href="#">Windows Aero</a></li>
             <li class="hideMainBar"><a href="#">Fluent Design System</a></li>
             <li class="hideMainBar"><a href="#">Блог</a></li>
-            <li class="burger-menu" onclick=showSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            <li class="burger-menu" onclick=showSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
     </nav>
 
@@ -40,36 +40,40 @@
 
     <div class="CardContainer">
         <div class="VistaCard">
-            <h2>Демонстрация стиля Windows Aero (Windows Vista)</h2>
-            <img class="VistaMAINimg" src="img/Vista.jpg">
-        <div class="VistaRecipe"><h4>Рецепт</h4>
-            <p>Характерные черты, добавление двух слоев
+            <div class="VistaInnerPadding">
+                <h2>Демонстрация стиля Windows Aero (Windows Vista)</h2>
+                <img class="VistaMAINimg" src="img/Vista.jpg">
+                <div class="VistaRecipe"><h4>Рецепт</h4>
+                <p>Характерные черты, добавление двух слоев
                 с градиентом, первый слой задает основной цвет,
                 второй cлой с белой обводкой имитирует эффект
                 стекла, третий слой изображение или текст. Общий стиль скевоморфизм</p></div>
-            <div class="VistaButton"><p>Завершение работы</p></div>
-            <div class="VistaTaskbar">
-                <div class="VistaLogo">
-                    <div class="VistaLogoGlass"></div>
-                    <img src="img/Windows_logo__2006_.png">
-                </div>
-                <div class="VistaPCicon">
-                    <img class="VistaPCiconimg" src="img/Computer.png">
-                </div>
+                <div class="VistaButton"><p>Завершение работы</p></div>
             </div>
+                <div class="VistaTaskbar">
+                    <div class="VistaLogo">
+                        <div class="VistaLogoGlass"></div>
+                        <img src="img/Windows_logo__2006_.png">
+                    </div>
+                    <div class="VistaPCicon">
+                        <img class="VistaPCiconimg" src="img/Computer.png">
+                    </div>
+                </div>
         </div>
         <div class="Win11Card">
-            <h2>Демонстрация стиля Windows Fluent Design Systems (Windows 11)</h2>
-            <img class="Win11MAINimg" src="img/windows 11 in react_large.png">
-        <div class="VistaRecipe"><h4>Рецепт</h4>
-            <p>Характерные черты, использование слоя с градиентом следующим
-                от яркого оттенка цвета к темному, при этом сохраняется стиль Флэт.
-            </p></div>
-            <div class="Win11Button">
+            <div class="Win11InnerPadding">
+                <h2>Демонстрация стиля Windows Fluent Design Systems (Windows 11)</h2>
+                <img class="Win11MAINimg" src="img/windows 11 in react_large.png">
+                <div class="VistaRecipe"><h4>Рецепт</h4>
+                    <p>Характерные черты, использование слоя с градиентом следующим
+                    от яркого оттенка цвета к темному, при этом сохраняется стиль Флэт.
+                    </p></div>
+                <div class="Win11Button">
                     <img class="Win11Storage" src="img/storage.png">
-                <div class="WBtext">
-                    <h2 class="WBtitle">Хранилище</h2>
-                    <p class="WBsubtitle">Свободное пространство, диски, настройки</p>
+                    <div class="WBtext">
+                        <h2 class="WBtitle">Хранилище</h2>
+                        <p class="WBsubtitle">Свободное пространство, диски, настройки</p>
+                    </div>
                 </div>
             </div>
             <div class="Win11Taskbar">

@@ -18,35 +18,66 @@ body {
 }
 
 nav {
-    background-color: #ffffff;
+    background-color: #404040;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
     width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     padding-right: 30px;
+    margin: 0;
+    width: 100%;
 }
 
 nav li {
-    height: 50px;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    transition: background-color 0.3s ease;
 }
+
 nav a {
+    position: relative;
     height: 100%;
     padding: 0 30px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #ffffff;
 }
 
-nav a:hover{
-    background-color: rgb(211, 211, 211);
-    border-radius: 5px;
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;          
+    left: 0;
+    width: 100%;            
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);     
+    transform-origin: center;
+    transition: transform 0.3s ease;
 }
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* nav li:hover{
+        background-color: rgba(0, 19, 188, 0.1);
+} */
+
+nav li:nth-child(1) { animation-delay: 0.1s; }
+nav li:nth-child(2) { animation-delay: 0.3s; }
+nav li:nth-child(3) { animation-delay: 0.5s; }
+nav li:nth-child(4) { animation-delay: 0.7s; }
+nav li:nth-child(5) { animation-delay: 0.9s; }
 
 nav li:first-child{
     margin-right: auto;
@@ -58,10 +89,10 @@ nav li:first-child{
     right: 0;
     margin: 0%;
     padding: 0%;
-    height: 100vh;
+    height: 50vh;
     width: 250px;
     z-index: 999;
-    background-color: rgba(134, 24, 24, 0.178);
+    background-color: rgba(41, 41, 41, 0.719);
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0,0,0,0.2);
     display: none;
@@ -80,6 +111,7 @@ nav li:first-child{
 
 .burger-menu{
     display: none;
+    margin-left: auto;
 }
 
 .CardContainer{
@@ -92,7 +124,7 @@ nav li:first-child{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: linear-gradient(177deg, #1bffc6b6 0%, #74e7009d 45%, #0094F1 100%);
     border-radius: 12px;
     box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.5);
@@ -100,14 +132,23 @@ nav li:first-child{
     flex: 1;
     min-width: 200px;
     max-width: 600px;
-    padding: 40px;
     width: fit-content;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+
+
+.VistaInnerPadding{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+
 .VistaMAINimg {
-    max-width: 100%;
-    height: auto;
+    min-width: 100%;
+    height: 600px;
     border-radius: 12px;
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4), 0 0 12px rgba(50, 2, 163, 0.2);
 }
@@ -129,19 +170,20 @@ nav li:first-child{
     border-radius: 5px;
 }
 
+/* .VistaTaskBarPadding{
+    margin: 0 10px 0;
+} */
+
 .VistaTaskbar {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     background: linear-gradient(180deg, #4f4f4fba 10%, #232323 47%);
-    margin-top: 40px;
-    margin-bottom: -35px; 
-    padding-left: 20px;
     border-radius: 5px;
-    max-height: 200px;
-    width: 108%;
-    
+    margin-bottom: 5px;
+    max-height: 200px;  
+    width: 100%;
 }
 
 .VistaLogo {
@@ -203,7 +245,6 @@ nav li:first-child{
 
 
 .Win11Card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     background: linear-gradient(180deg, #0095FF 20%, #0059 100%);
     display: flex;
     flex-direction: column;
@@ -215,9 +256,12 @@ nav li:first-child{
     flex: 1;
     min-width: 200px;
     max-width: 600px;
-    padding: 40px;
     width: fit-content;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Win11InnerPadding{
+    padding: 40px;
 }
 
 .Win11MAINimg {
@@ -233,12 +277,11 @@ nav li:first-child{
     align-items: center;
     justify-content: start;
     background-color: #232323;
-    margin-top: 40px;
-    margin-bottom: -35px; 
     border-radius: 5px;
     max-height: 200px;
-    width: 112%;
+    width: 100%;
     height: 80px;
+    margin: 0 0 20px;
 }
 
 .Win11Storage {
@@ -270,12 +313,11 @@ nav li:first-child{
     align-items: center;
     justify-content: center;
     background-color: #182A58;
-    margin-top: 40px;
-    margin-bottom: -35px; 
     border-radius: 5px;
     max-height: 200px;
-    width: 112%;
+    width: 100%;
     height: 80px;
+    margin-bottom: 5px;
 }
 
 .Win11Logoimg {
@@ -320,16 +362,22 @@ nav li:first-child{
     margin-top: auto;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 2560px) {
  .body {
         font-size: large;
 
     }
+    .VistaMAINimg{
+        height: 280px;
+    }
 }
-@media (max-width: 1080px) {
+@media (max-width: 1920px) {
   .body {
         font-size: medium;
 
+    }
+    .VistaMAINimg{
+        height: 280px;
     }
 }
 
@@ -338,11 +386,7 @@ nav li:first-child{
         font-size: medium;
     }
     .VistaMAINimg{
-        height: 316px;
-    }
-    .VistaTaskbar {
-        height: 70px;
-        width: 473px;
+        height: 280px;
     }
     .VistaLogo {
         min-width: 70px;
@@ -370,10 +414,6 @@ nav li:first-child{
 
     .Win11MAINimg{
         height:280px;
-    }
-     .Win11Taskbar {
-        height: 70px;
-        width: 495px;
     }
 
     .ChosenAppWin11 {
@@ -414,11 +454,7 @@ nav li:first-child{
 
     }
     .VistaMAINimg{
-        height: 316px;
-    }
-    .VistaTaskbar {
-        height: 70px;
-        width: 108%;
+        height: 280px;
     }
     .VistaLogo {
         min-width: 70px;
@@ -472,3 +508,9 @@ nav li:first-child{
         font-size: small;
     }
 }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
